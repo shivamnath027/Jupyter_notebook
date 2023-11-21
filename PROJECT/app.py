@@ -224,6 +224,26 @@ def main():
 
     st.success('The predicted diabetes risk is {}'.format(result))
 
+
+# Tabs = {
+#     "Home": home,
+#     "Data Info": data,
+#     "Prediction": predict,
+#     "Visualisation": visualise
+    
+# }
+# from Tabs import home, data, predict, visualise
+
+# navigation = st.sidebar.radio("Navigation", ["Home", "Page 1", "Page 2"])
+# st.sidebar.title("Navigation")
+
+
+# # Create radio option to select the page
+# page = st.sidebar.radio("Pages", list(Tabs.keys()))
+
+
+
+
 if __name__ == '__main__':
     main()
 
