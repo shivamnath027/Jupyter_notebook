@@ -21,34 +21,34 @@ if(selected == "Diabetes Prediction"):
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        age = st.text_input("Age")
+        age = st.number_input("Age", min_value=22, max_value=93, value=44)
         
     with col2:
-        bmi = st.text_input("BMI")
+        bmi = st.number_input("BMI (kg/m2)", min_value=15.6, max_value=50.0, value=25.7)
     
     with col3:
-        fpg = st.text_input("FPG")
+        fpg = st.number_input("FPG", min_value=1.78, max_value=10.0, value=6.69,help="FPG (Fasting Plasma Glucose)")
     
     with col1:
-        ffpg = st.text_input("FFPG")
+        ffpg = st.number_input("FFPG", min_value=3.2, max_value=35.0, value=7.4,help="FFPG (Final Fasting Plasma Glucose)")
     
     with col2:
-        sbp = st.text_input("SBP")
+        sbp = st.number_input("SBP (mmHg)", min_value=72.0, max_value=218.0, value=105.0,help="SBP (Systolic Blood Pressure)")
     
     with col3:
-        dbp = st.text_input("DBP")
+        dbp = st.number_input("DBP",min_value=45,max_value=140,value=78,help="DBP (Diastolic Blood Pressure)")
     
     with col1:
-        family_history = st.text_input("Family History")
+        family_history = st.number_input("Family History", min_value=0, max_value=1, value=0)
     
     with col2:
-        smoking = st.text_input("Smoking")
+        smoking = st.number_input("Smoking", min_value=1, max_value=3, value=3,help="Smoking Status: 1: Current Smoker, 2: Ever Smoker, 3: Never Smoker")
 
     with col3:
-        drinking = st.text_input("drinking")
+        drinking = st.number_input("Drinking", min_value=1, max_value=3, value=3,help="Drinking Status: 1: Current Drinker, 2: Ever Drinker, 3: Never Drinker")
     
     with col1:
-        alt = st.text_input("ALT")
+        alt = st.number_input("ALT", min_value=4.5, max_value=440.0, value=48.0)
 
 
 # code for Prediction
