@@ -102,10 +102,10 @@ import pickle
 import pandas as pd
 import streamlit as st
 
-pickle_in = open("classifier.pkl", "rb")
+pickle_in = open("diabetes.pkl", "rb")
 classifier = pickle.load(pickle_in)
 
-def predict_diabetes_risk(age, bmi, fpg, ffpg, sbp, family_history, smoking, drinking, alt):
+def predict_diabetes_risk(age, bmi, fpg, ffpg, sbp,dbp, family_history, smoking, drinking, alt):
     """
     Predicts diabetes risk using the provided parameters.
 
@@ -127,6 +127,10 @@ def predict_diabetes_risk(age, bmi, fpg, ffpg, sbp, family_history, smoking, dri
         type: number
         required: true
       - name: sbp
+        in: query
+        type: number
+        required: true
+      - name: dbp
         in: query
         type: number
         required: true
@@ -155,34 +159,34 @@ def predict_diabetes_risk(age, bmi, fpg, ffpg, sbp, family_history, smoking, dri
     # ...
 
     # Make a prediction
-    prediction = classifier.predict([[age, bmi, fpg, ffpg, sbp, family_history, smoking, drinking, alt]])
+    prediction = classifier.predict([[age, bmi, fpg, ffpg, sbp,dbp, family_history, smoking, drinking, alt]])
 
     return prediction
 
 def main():
     st.title("Diabetes Risk Predictor")
     html_temp = """
-    <div style="background-color:tomato;padding:10px">
+    <div style="background-color:blue;padding:10px">
     <h2 style="color:white;text-align:center;">Streamlit Diabetes Risk Predictor App </h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
     # Get input from the user
-    age = st.number_input("Age", min_value=24, max_value=88, value=57)
-    bmi = st.number_input("BMI (kg/m2)", min_value=16.0, max_value=63.0, value=18.94)
-    fpg = st.number_input("FPG", min_value=70, max_value=300, value=100)
-    ffpg = st.number_input("FFPG", min_value=70, max_value=300, value=90)
-    sbp = st.number_input("SBP (mmHg)", min_value=92.0, max_value=218.0, value=101.0)
+    age = st.number_input("Age", min_value=22, max_value=93, value=44)
+    bmi = st.number_input("BMI (kg/m2)", min_value=15.6, max_value=50.0, value=25.7)
+    fpg = st.number_input("FPG", min_value=1.78, max_value=10.0, value=6.69,help="FPG (Fasting Plasma Glucose)")
+    ffpg = st.number_input("FFPG", min_value=3.2, max_value=35.0, value=7.4,help="FFPG (Final Fasting Plasma Glucose)")
+    sbp = st.number_input("SBP (mmHg)", min_value=72.0, max_value=218.0, value=105.0,help="SBP (Systolic Blood Pressure)")
+    dbp = st.number_input("DBP",min_value=45,max_value=140,value=78,help="DBP (Diastolic Blood Pressure)")
     family_history = st.number_input("Family History", min_value=0, max_value=1, value=0)
-    smoking = st.number_input("Smoking", min_value=0, max_value=1, value=1)
-    drinking = st.number_input("Drinking", min_value=0, max_value=1, value=0)
-    alt = st.number_input("ALT", min_value=5, max_value=120, value=20)
-
+    smoking = st.number_input("Smoking", min_value=1, max_value=3, value=3,help="Smoking Status: 1: Current Smoker, 2: Ever Smoker, 3: Never Smoker")
+    drinking = st.number_input("Drinking", min_value=1, max_value=3, value=3,help="Drinking Status: 1: Current Drinker, 2: Ever Drinker, 3: Never Drinker")
+    alt = st.number_input("ALT", min_value=4.5, max_value=440.0, value=48.0)
     result = ""
 
     if st.button("Predict"):
-        result = predict_diabetes_risk(age, bmi, fpg, ffpg, sbp, family_history, smoking, drinking, alt)
+        result = predict_diabetes_risk(age, bmi, fpg, ffpg, sbp,dbp, family_history, smoking, drinking, alt)
 
     st.success('The predicted diabetes risk is {}'.format(result))
 
