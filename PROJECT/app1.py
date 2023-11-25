@@ -188,7 +188,11 @@ def main():
     if st.button("Predict"):
         result = predict_diabetes_risk(age, bmi, fpg, ffpg, sbp,dbp, family_history, smoking, drinking, alt)
 
-    st.success('The predicted diabetes risk is {}'.format(result))
+
+    if result==1:
+      st.success('Sorry! you are having chances of having diabetes')
+    elif result==0:
+      st.success('Bravo! you are not having chances of having diabetes')
 
 if __name__ == '__main__':
     main()
