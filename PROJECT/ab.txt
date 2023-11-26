@@ -1,0 +1,37 @@
+ 1. Data Preprocessing:
+   - Data Loading:
+     - The dataset is loaded from an Excel/csv file ('dataset_file.xlsx/csv') using the Pandas library.
+   - Label Encoding:
+     - Categorical variables are label-encoded using the `LabelEncoder` from Scikit-learn.
+   - Feature Scaling:
+     - Standard scaling is applied to normalize the feature values using the `StandardScaler` from Scikit-learn.
+
+ 2. Data Splitting:
+   - The dataset is split into training and testing sets using the `train_test_split` function from Scikit-learn.
+
+ 3. Random Forest Classifier:
+   - Initialization:
+     - A Random Forest classifier is created using the `RandomForestClassifier` from Scikit-learn with 100 estimators and a random state of 42.
+   - Training:
+     - The Random Forest model is trained on the training data using the `fit` method.
+
+ 4. Model Evaluation:
+   - Accuracy Calculation:
+     - Model accuracy is calculated using the `accuracy_score` from Scikit-learn.
+   - AUC-ROC Score:
+     - The AUC-ROC score is computed using the `roc_auc_score` from Scikit-learn.
+   - Confusion Matrix:
+     - The confusion matrix is generated using the `confusion_matrix` from Scikit-learn.
+     - Specificity and sensitivity are calculated from the confusion matrix.
+ 
+ 5. Receiver Operating Characteristic (ROC) Curve:
+   - The ROC curve is plotted using the `roc_curve` and `auc` functions from Scikit-learn.
+   - The area under the ROC curve (AUC) is calculated and displayed on the plot.
+
+ 6. Results Presentation:
+   - Accuracy Report:
+     - The overall accuracy of the Random Forest model is printed.
+
+ 7. Visualization:
+   - ROC Curve Plot:
+     - The ROC curve is visualized using Matplotlib.
