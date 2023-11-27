@@ -166,8 +166,8 @@ def predict_diabetes_risk(age, bmi, fpg, ffpg, sbp,dbp, family_history, smoking,
 def main():
     st.title("Diabetes Risk Predictor")
     html_temp = """
-    <div style="background-color:blue;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Diabetes Risk Predictor App </h2>
+    <div style="background-color:green;padding:10px">
+    <h2 style="color:black;text-align:center;">Streamlit Diabetes Risk Predictor App </h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)

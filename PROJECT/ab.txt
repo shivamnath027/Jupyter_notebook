@@ -35,3 +35,92 @@
  7. Visualization:
    - ROC Curve Plot:
      - The ROC curve is visualized using Matplotlib.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Methods and Features: Diabetic Kidney Disease Prediction
+
+ 1. Data and Features
+   - Dataset
+     - The study utilized data sourced from 'Diabetic_Nephropathy.csv'.
+   - Features
+     - The dataset incorporates a set of relevant features:
+       - Age
+       - BMI (Body Mass Index)
+       - FPG (Fasting Plasma Glucose)
+       - FFPG (Postprandial Plasma Glucose)
+       - SBP (Systolic Blood Pressure)
+       - DBP (Diastolic Blood Pressure)
+       - Family History
+       - Smoking Status
+       - Drinking Habits
+       - ALT (Alanine Transaminase)
+       - Diabetes Diagnosis
+
+ 2. Data Preprocessing
+   - Label Encoding
+     - Categorical variables within the dataset are encoded using the `LabelEncoder` from Scikit-learn.
+   - Feature Scaling
+     - Standardization of feature values is conducted using the `StandardScaler` from Scikit-learn to ensure uniformity and enhance model performance.
+
+ 3. Data Splitting
+   - The dataset is partitioned into training and testing sets using the `train_test_split` function from Scikit-learn. This split is instrumental in assessing the model's generalization performance.
+
+ 4. Support Vector Classifier (SVC)
+   - Model Initialization
+     - A Support Vector Classifier (SVC) is employed for predicting Diabetic Kidney Disease.
+   - Training
+     - The SVC model is trained on the preprocessed training data using the `fit` method.
+
+ 5. Prediction and Accuracy Evaluation
+   - Prediction
+     - The trained SVC model is utilized to predict values on the test set.
+   - Accuracy Calculation
+     - Model accuracy is assessed using the `accuracy_score` from Scikit-learn.
+   - Printed Result
+     - The accuracy of the SVC model on the test set is printed for evaluation.
+
+ 6. Result Interpretation
+   - The accuracy metric provides insight into the model's effectiveness in predicting Diabetic Kidney Disease based on the selected features.
+
+ 7. Considerations
+   - While the accuracy is a crucial metric, further analysis and interpretation may be necessary to understand the model's sensitivity and specificity, especially in the context of medical predictions.
+
+This section outlines the key steps involved in predicting Diabetic Kidney Disease, including data features, preprocessing, model training, and accuracy evaluation. Feel free to elaborate on specific aspects relevant to your study or dataset.
+
+
+
+
+
+1. Sex: Biological sex of the individual.
+2. Age: Age of the individual.
+3. Diabetes duration (y): Duration of diabetes in years.
+4. Diabetic retinopathy (DR): Presence or absence of Diabetic Retinopathy.
+5. Smoking: Smoking status.
+6. Drinking: Alcohol consumption status.
+7. Height (cm): Height of the individual in centimeters.
+8. Weight (kg): Weight of the individual in kilograms.
+9. BMI (kg/m²): Body Mass Index.
+10. SBP (mmHg): Systolic Blood Pressure.
+11. DBP (mmHg): Diastolic Blood Pressure.
+12. HbA1c (%): Glycated Hemoglobin.
+13. FBG (mmol/L): Fasting Blood Glucose.
+14. TG (mmol/L): Triglycerides.
+15. C-peptide (ng/ml): C-peptide level.
+16. TC (mmol/L): Total Cholesterol.
+17. HDLC (mmol/L): High-Density Lipoprotein Cholesterol.
+18. LDLC (mmol/L): Low-Density Lipoprotein Cholesterol.
+19. Insulin: Insulin medication usage.
+20. Metformin: Metformin medication usage.
+21. Lipid lowering drugs: Usage of lipid-lowering drugs.
